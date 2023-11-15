@@ -54,7 +54,7 @@ namespace SWA.API.Controllers
                 }
 
                 var itemModel = _mapper.Map<Item>(itemAddDto);
-                itemModel.Id = Guid.NewGuid();  // no-effect
+                itemModel.Id = Guid.NewGuid();
 
                 _itemRepo.CreateItem(itemModel);
 
@@ -73,7 +73,7 @@ namespace SWA.API.Controllers
         {
             try
             {
-                var items = _itemRepo.GetAllItems(); // Retrieve items from your data store
+                var items = _itemRepo.GetAllItems();
 
                 var itemsWithRowNumbers = items.Select((item, index) => new Item
                 {
